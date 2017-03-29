@@ -1,8 +1,8 @@
 'use strict';
 
-const path = require('path');
-const assert = require('yeoman-assert');
-const helpers = require('yeoman-test');
+var path = require('path');
+var assert = require('yeoman-assert');
+var helpers = require('yeoman-test');
 
 describe('waab:app', function () {
   describe('default', function () {
