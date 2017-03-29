@@ -36,7 +36,7 @@ module.exports = class extends Generator {
       done();
     })
   }
-  // configuring() {}
+
   writing() {
     const appName = this.config.get('appName');
     let packageFile = require(this.templatePath('static-single/_package.json'));

@@ -99,4 +99,4 @@ describe('waab:app', function () {
       assert.fileContent('package.json', /name": "foo-app-name"/)
     })
   })
-})
+});
