@@ -1,6 +1,7 @@
 # generator-waab
 
 ### Webpack Angular Application Builder
+[![Build Status](https://travis-ci.org/MLSDev/generator-waab.svg?branch=master)](https://travis-ci.org/MLSDev/generator-waab)
 
 > Angular 2 application generator based on webpack bundling system
  
