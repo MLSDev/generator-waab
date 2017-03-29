@@ -1,0 +1,36 @@
+{
+  "name": "generator-waab",
+  "version": "0.1.0",
+  "description": "Generator for angular 2 applications, powered by webpack bundler. Includes configs for different developing environments and for running unit tests",
+  "keywords": [
+    "yeoman-generator",
+    "generator-waab",
+    "app generator",
+    "angular 2",
+    "angular app",
+    "webpack-builder",
+    "webpack"
+  ],
+  "main": "app/index.js",
+  "repository": "MLSDev/generator-waab",
+  "files": [
+    "app"
+  ],
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "author": "sedletskyi@mlsdev.com",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^1.1.1",
+    "yosay": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  }
+}
