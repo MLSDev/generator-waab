@@ -39,7 +39,7 @@ module.exports = class extends Generator {
 
   writing() {
     const appName = this.config.get('appName');
-    let packageFile = require(this.templatePath('static-single/_package.json'));
+    let packageFile = require(this.templatePath('single/_package.json'));
 
     let packageJSON = {
       name: _.kebabCase(appName),
@@ -53,18 +53,18 @@ module.exports = class extends Generator {
     this.fs.writeJSON('package.json', packageJSON);
 
     this.fs.copy(
-      this.templatePath('static-single/gitignore'),
+      this.templatePath('single/gitignore'),
       this.destinationPath('.gitignore')
     );
-    this.fs.copy(
-      this.templatePath('static-single/_README.md'),
+    this.fs.copyTpl(
+      this.templatePath('single/_README.md'),
       this.destinationPath('README.md'),
       {
         appName: appName
       }
     );
     this.fs.copy(
-      this.templatePath('static-single/_CHANGELOG.md'),
+      this.templatePath('single/_CHANGELOG.md'),
       this.destinationPath('CHANGELOG.md')
     );
     this.fs.copy(
@@ -78,6 +78,13 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('src'),
       this.destinationPath('src')
+    );
+    this.fs.copyTpl(
+      this.templatePath('single/app.component.ts'),
+      this.destinationPath('src/app/app.component.ts'),
+      {
+        appName: appName
+      }
     );
     mkdirp('src/app/shared');
     mkdirp('src/app/vendor');

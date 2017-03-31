@@ -1,4 +1,4 @@
-# App
+# <%= appName %>
  
 ## Dependencies
 

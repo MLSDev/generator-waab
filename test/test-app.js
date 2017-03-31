@@ -47,8 +47,10 @@ describe('waab:app', function () {
       ])
     });
 
-    it('adds default value for name in generated package.json', function () {
-      assert.fileContent('package.json', /name": "test-app"/)
+    it('pastes default project name in generated files', function () {
+      assert.fileContent('package.json', /name": "test-app"/);
+      assert.fileContent('README.md', /testApp/);
+      assert.fileContent('src/app/app.component.ts', /testApp/);
     })
   });
 
@@ -95,8 +97,10 @@ describe('waab:app', function () {
       ])
     });
 
-    it('adds prompted value "foo-app-name" for name in generated package.json', function () {
-      assert.fileContent('package.json', /name": "foo-app-name"/)
+    it('pastes prompted app name "FooAppName" in generated files', function () {
+      assert.fileContent('package.json', /name": "foo-app-name"/);
+      assert.fileContent('README.md', /FooAppName/);
+      assert.fileContent('src/app/app.component.ts', /FooAppName/);
     })
   })
 });
