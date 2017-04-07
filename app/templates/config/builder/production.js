@@ -4,6 +4,19 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const WebpackChunkHash = require("webpack-chunk-hash");
+const imageminLoader = require('imagemin-webpack').imageminLoader;
+const ImageminWebpackPlugin = require('imagemin-webpack').ImageminWebpackPlugin;
+const ImageminGifsicle = require('imagemin-gifsicle');
+const ImageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminPngquant = require('imagemin-pngquant');
+
+const plugins = [
+  ImageminGifsicle(),
+  ImageminMozjpeg(),
+  ImageminPngquant({
+    speed: 10
+  })
+];
 
 const stylusLoaders = require('./styles-loader/stylus-export')('minimize');
 const cssLoaders = require('./styles-loader/css-export')('minimize');
@@ -22,12 +35,30 @@ module.exports = function (dirName) {
       rules: [
         {
           test: /\.styl$/,
-          include: path.resolve(dirName ,'main/styles'),
+          include: path.resolve(dirName ,'src/styles'),
           use: extractStyles.extract(stylusLoaders)
         },
         {
           test: /\.css$/,
           use: extractVendorStyles.extract(cssLoaders)
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/,
+          include: path.resolve(dirName, "src/public/images"),
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[path][name].[ext]'
+              }
+            },
+            {
+              loader: imageminLoader,
+              options: {
+                plugins
+              }
+            }
+          ]
         }
       ]
     },
@@ -58,7 +89,12 @@ module.exports = function (dirName) {
         }
       }),
       new webpack.HashedModuleIdsPlugin(),
-      new WebpackChunkHash()
+      new WebpackChunkHash(),
+      new ImageminWebpackPlugin({
+        imageminOptions: {
+          plugins
+        }
+      })
     ]
   }
 }

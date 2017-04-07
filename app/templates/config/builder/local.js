@@ -42,6 +42,18 @@ module.exports = function (dirName) {
         {
           test: /\.css$/,
           use: extractVendorStyles.extract(cssLoaders)
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/,
+          include: path.resolve(dirName, "src/public/images"),
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[path][name].[ext]'
+              }
+            }
+          ]
         }
       ]
     },

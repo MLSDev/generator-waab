@@ -87,7 +87,8 @@ module.exports = function (dirName, appConfigs, env) {
           ]
         },
         {
-          test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
+          test: /\.(svg|ttf|eot|woff|woff2)$/,
+          exclude: path.resolve(dirName, "src/public/images"),
           loader: 'file-loader',
           options: {
             name: '[path][name].[ext]'

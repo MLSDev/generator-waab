@@ -13,6 +13,7 @@
 * Compilation of [Pug](https://pugjs.org), [Stylus](https://learnboost.github.io/stylus/), [Typescript](https://www.typescriptlang.org/)
 * Linting Typescript with [TSLint](https://palantir.github.io/tslint/) based on rules from [codelyzer](https://github.com/mgechev/codelyzer)
 * Running unit tests with [Karma](https://karma-runner.github.io/1.0/index.html)
+* Images optimization using [imagemin-webpack](https://github.com/itgalaxy/imagemin-webpack) based on [imagemin](https://github.com/imagemin/imagemin)
 
 ## Quick start
 Make sure you have Node version >= 6.1 and NPM >= 4.1
