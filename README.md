@@ -29,7 +29,7 @@ npm install -g generator-waab
 cd /my-app
 
 # run generator
-yo generator-waab
+yo waab
 ```
 
 Now the project is created. You can start developing
