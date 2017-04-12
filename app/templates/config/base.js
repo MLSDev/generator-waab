@@ -117,7 +117,7 @@ module.exports = function (dirName, appConfigs, env) {
         template: path.resolve(dirName, "src/index.ejs")
       }),
       new webpack.ContextReplacementPlugin(
-        /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
+        /angular(\\|\/)core(\\|\/)@angular/,
         path.resolve(dirName, 'src')
       ),
       new webpack.optimize.CommonsChunkPlugin({
