@@ -1,2 +1,2 @@
 declare const ENV: string;
-declare const APP_CONST: Object;
+declare const APP_CONST: any;
