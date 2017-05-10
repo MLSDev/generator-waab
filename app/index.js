@@ -101,7 +101,10 @@ module.exports = class extends Generator {
 
     const runInstall = this.config.get('runInstall');
     if (runInstall) {
-      this.installDependencies()
+      this.installDependencies({
+        npm: true,
+        bower: false
+      })
     }
   }
   
