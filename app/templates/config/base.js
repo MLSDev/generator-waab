@@ -52,7 +52,10 @@ module.exports = function (dirName, appConfigs, env) {
               loader: 'to-string-loader'
             },
             {
-              loader: 'css-loader'
+              loader: 'css-loader',
+              options: {
+                sourceMap: env !== 'production'
+              }
             },
             {
               loader: 'postcss-loader',
@@ -63,13 +66,15 @@ module.exports = function (dirName, appConfigs, env) {
                       browsers: 'last 2 versions'
                     })
                   ];
-                }
+                },
+                sourceMap: env !== 'production'
               }
             },
             {
               loader: 'stylus-loader',
               options: {
-                'resolve url': true
+                'resolve url': true,
+                sourceMap: env !== 'production'
               }
             }
           ]

@@ -1,4 +1,4 @@
-module.exports = function (minimize) {
+module.exports = function (minimize, sourceMap) {
   return {
     fallback: "style-loader",
     use: [
@@ -6,7 +6,8 @@ module.exports = function (minimize) {
         loader: 'css-loader',
         options: {
           minimize: !!minimize,
-          'resolve url': true
+          'resolve url': true,
+          sourceMap: !!sourceMap
         }
       }
     ]

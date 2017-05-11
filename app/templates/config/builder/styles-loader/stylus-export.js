@@ -1,11 +1,12 @@
-module.exports = function (minimize) {
+module.exports = function (minimize, sourceMap) {
   return {
     fallback: "style-loader",
     use: [
       {
         loader: 'css-loader',
         options: {
-          minimize: !!minimize
+          minimize: !!minimize,
+          sourceMap: !!sourceMap
         }
       },
       {
@@ -17,13 +18,15 @@ module.exports = function (minimize) {
                 browsers: 'last 2 versions'
               })
             ];
-          }
+          },
+          sourceMap: !!sourceMap
         }
       },
       {
         loader: 'stylus-loader',
         options: {
-          'resolve url': true
+          'resolve url': true,
+          sourceMap: !!sourceMap
         }
       }
     ]

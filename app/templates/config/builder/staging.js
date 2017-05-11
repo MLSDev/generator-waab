@@ -66,7 +66,7 @@ module.exports = function (dirName) {
 
     },
 
-    devtool: "cheap-inline-module-source-map",
+    devtool: "cheap-module-source-map",
 
     plugins: [
       extractStyles,

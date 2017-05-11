@@ -2,8 +2,8 @@ const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const stylusLoaders = require('./styles-loader/stylus-export')();
-const cssLoaders = require('./styles-loader/css-export')();
+const stylusLoaders = require('./styles-loader/stylus-export')(null, 'sourceMap');
+const cssLoaders = require('./styles-loader/css-export')(null, 'sourceMap');
 
 const extractStyles = new ExtractTextPlugin('main.css');
 const extractVendorStyles = new ExtractTextPlugin('vendor.css');
