@@ -1,3 +1,8 @@
+## 0.2.1 (2017-05-26)
+Features:
+  - fix issue with css files from node_modules directory
+  ([0fba64d](https://github.com/MLSDev/generator-waab/commit/0fba64dce74c94b43cf99b918d8afeda04051066))
+  
 ## 0.2.0 (2017-05-26)
 Features:
   - update dependencies versions
