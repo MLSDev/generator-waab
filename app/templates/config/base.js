@@ -128,6 +128,9 @@ module.exports = function (dirName, appConfigs, env) {
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         minChunks: module => {
+          if(module.resource && (/^.*\.(css)$/).test(module.resource)) {
+            return false;
+          }
           return /node_modules/.test(module.resource) || /app\/vendor/.test(module.resource)
         }
       }),
