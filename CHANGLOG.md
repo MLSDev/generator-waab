@@ -1,3 +1,10 @@
+## 0.2.0 (2017-05-26)
+Features:
+  - update dependencies versions
+  - update installation options 
+  - fix small issues 
+  ([fc0ba2d](https://github.com/MLSDev/generator-waab/commit/fc0ba2dc53fb1084a90c136bb5bc8e20b6d598c1))
+  
 ## 0.1.0 (2017-03-29)
 Features:
   - generating main app structure for angular 2 based application
