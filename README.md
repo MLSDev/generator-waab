@@ -34,6 +34,60 @@ yo waab
 
 Now the project is created. You can start developing
 
+### How to update generator
+
+Installing generator again will update it to the newest version.
+
+```
+# install generator globally again
+npm install -g generator-waab
+
+# run generator to update files it in your app
+yo waab
+```
+
+### Install options
+
+You can select files, which you want to add with generator.
+
+Here is a list of files for each option, which you can see on `Select files, which you want to generate` step
+
+```
+#App constants
+ - folder: configs/app
+ 
+#Builder configs
+ - folder: configs/builder
+ - folder: configs/test
+ - file: configs/base.js
+ - files in app root: 
+    - global-typings.d.ts
+    - karma.conf.js
+    - tsconfig.json
+    - tsconfig.webpack.json
+    - webpack.config.js
+    
+#App src files
+ - folder: src
+ 
+#Basic app files
+ - files in app root:
+    - package.json
+    - .gitignore
+    - README.md
+    - CHANGELOG.md
+    
+#Create assets folders
+ - create folders:
+    - src/app/vendor
+    - src/public
+    - src/public/favicon
+    - src/public/fonts
+    - src/public/images
+    - src/public/locales
+    - src/styles/vendor
+```
+
 ### App structure
  App structure is based on component approach, proposed in [Angular Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html#!#application-structure-and-angular-modules).
  
@@ -85,6 +139,34 @@ npm run start:staging
 # running build for production environment
 npm run start:prod
 ```
+
+### Including styles from `node_modules`
+
+Just import it in `index.ts`. Use absolute path:
+
+`import "module_name_from_node_modules/path_to_styles/styles.css"`
+
+### Images in styles and templates
+
+Loaders will move images from `src/public` folder to `dist/public` and change path in files, where image is included.
+
+For correct images loading, use relative path, from file where image is included.
+
+Examples:
+* Including images in stylesheets: `background: url(../../public/images/logo.png)`
+* Including images in pug templates: `img(src=require('../../public/images/logo.png))`
+
+### APP constants
+
+Configuration constants which are available in app:
+* `ENV` - environment variable (string)
+* `APP_CONST` - application constants (object)
+
+`ENV` - is set from npm scripts
+
+`APP_CONST` - this object is a copy of `appConstants` object in environment config file `configs/app/*.js`
+
+ In config file `configs/app/*.js`, `template` object holds configuration constants for template `index.ejs`. For example, to output `basePath` parameter just write`<%= htmlWebpackPlugin.options.basePath %>` in template.      
 
 #### Build Features
  * `dist` - destination folder for compiled builds
