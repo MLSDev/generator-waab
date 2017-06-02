@@ -166,6 +166,18 @@ Configuration constants which are available in app:
 
 `APP_CONST` - this object is a copy of `appConstants` object in environment config file `configs/app/*.js`
 
+Usage example:
+
+```
+class YourClass {
+  someMethod() {
+    console.log(ENV);
+    console.log(APP_CONST);
+    console.log(APP_CONST['api']);
+  }
+}
+```
+
  In config file `configs/app/*.js`, `template` object holds configuration constants for template `index.ejs`. For example, to output `basePath` parameter just write`<%= htmlWebpackPlugin.options.basePath %>` in template.      
 
 #### Build Features
