@@ -1,3 +1,9 @@
+## 0.3.0 (2017-06-02)
+Features:
+  - update README, add more information about development
+  - add prompt for selecting which group of files generate
+  - remove installing packages option ([c2cb027](https://github.com/MLSDev/generator-waab/commit/c2cb027ef9c7edee23a6825d99a479eabedf9773))
+  
 ## 0.2.1 (2017-05-26)
 Features:
   - fix issue with css files from node_modules directory
