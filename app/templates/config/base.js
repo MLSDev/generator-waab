@@ -74,7 +74,10 @@ module.exports = function (dirName, envConstants, env) {
               loader: 'stylus-loader',
               options: {
                 'resolve url': true,
-                sourceMap: env !== 'production'
+                sourceMap: env !== 'production',
+                import: [
+                  path.resolve(dirName, "src/styles/variables.styl")
+                ]
               }
             }
           ]

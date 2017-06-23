@@ -140,6 +140,10 @@ npm run start:staging
 npm run start:prod
 ```
 
+### Using variables in `stylus`
+
+Use file `variables.styl` in `src/styles` for storing stylus variables and mixins. It should be imported only in `main.styl`. In component styles it's imported in loader configs.   
+
 ### Including styles from `node_modules`
 
 Just import it in `index.ts`. Use absolute path:
