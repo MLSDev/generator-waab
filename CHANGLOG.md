@@ -1,3 +1,12 @@
+## 0.4.0 (2017-06-23)
+Features:
+  - update builder constants location
+  - update dependencies versions
+  - change index.ejs template to index.html
+  - update template constants
+  - add variables.styl file, for holding stylus mixins and variables
+  - update instructions in readme ([daf2913](https://github.com/MLSDev/generator-waab/commit/daf2913944544664c76fbc8c3cb6c9ef1e3694a6))
+  
 ## 0.3.0 (2017-06-02)
 Features:
   - update README, add more information about development
