@@ -10,7 +10,7 @@ const getPublicPath = (basePath) => {
   return (basePath === '/') ? '' : basePath
 };
 
-module.exports = function (dirName, appConfigs, env) {
+module.exports = function (dirName, envConstants, env) {
   return {
     context: path.resolve(dirName, "src"),
     entry: {
@@ -18,7 +18,7 @@ module.exports = function (dirName, appConfigs, env) {
     },
     output: {
       path: path.resolve(dirName, "dist"),
-      publicPath: getPublicPath(appConfigs.template.basePath)
+      publicPath: getPublicPath(envConstants.template.basePath)
     },
     module: {
       rules: [
@@ -112,14 +112,13 @@ module.exports = function (dirName, appConfigs, env) {
       new CheckerPlugin(),
       new WebpackCleanupPlugin(),
       new webpack.DefinePlugin({
-        'APP_CONST': JSON.stringify(appConfigs.appConstants),
+        'APP_CONST': JSON.stringify(envConstants.app),
         'ENV': JSON.stringify(env)
       }),
       // new webpack.ProvidePlugin({}),
       new HtmlWebpackPlugin({
-        basePath: appConfigs.template.basePath,
-        constants: appConfigs.template.constants,
-        template: path.resolve(dirName, "src/index.ejs")
+        constants: envConstants.template,
+        template: path.resolve(dirName, "src/index.html")
       }),
       new webpack.ContextReplacementPlugin(
         /angular(\\|\/)core(\\|\/)@angular/,

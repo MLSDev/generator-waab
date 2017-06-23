@@ -98,8 +98,8 @@ module.exports = class extends Generator {
 
     if (_.indexOf(filesToUpdate, 'constants') !== -1) {
       this.fs.copy(
-        this.templatePath('config/app'),
-        this.destinationPath('config/app')
+        this.templatePath('config/constants'),
+        this.destinationPath('config/constants')
       );
     }
 

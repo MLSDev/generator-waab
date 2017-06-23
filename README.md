@@ -54,7 +54,7 @@ Here is a list of files for each option, which you can see on `Select files, whi
 
 ```
 #App constants
- - folder: configs/app
+ - folder: configs/constants
  
 #Builder configs
  - folder: configs/builder
@@ -94,7 +94,7 @@ Here is a list of files for each option, which you can see on `Select files, whi
  ```
  application-root/
   ├──config/                        * bundler and test configurations
-  |   ├──app/                       * constants for application used in index.ejs template and in scripts
+  |   ├──constants/                 * constants for application used in index.html template and in scripts
   |   │   └──<env>.js               * config files for different environments
   |   ├──builder/                   * webpack bundler configs
   |   │   ├──styles-loader/         * exported configurable style loaders
@@ -110,7 +110,7 @@ Here is a list of files for each option, which you can see on `Select files, whi
   |   ├──public/                    * all public files folder (fonts, images, favicons, translations) 
   |   ├──styles/                    * common styles for application 
   │   │  
-  |   ├──index.ejs                  * index page template 
+  |   ├──index.html                 * index page template 
   |   └──index.ts                   * root script file 
   │
   ├──global-typings.d.ts            * types definitions for global variables inserted by DefinePlugin 
@@ -178,7 +178,7 @@ class YourClass {
 }
 ```
 
- In config file `configs/app/*.js`, `template` object holds configuration constants for template `index.ejs`. For example, to output `basePath` parameter just write`<%= htmlWebpackPlugin.options.basePath %>` in template.      
+ In config file `configs/constants/*.js`, `template` object holds configuration constants for template `index.html`. For example, to output `basePath` parameter just write`<%= htmlWebpackPlugin.options.constants.basePath %>` in template.      
 
 #### Build Features
  * `dist` - destination folder for compiled builds
