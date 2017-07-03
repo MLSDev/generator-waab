@@ -1,11 +1,9 @@
-## 0.4.0 (2017-06-23)
+## 0.4.1 (2017-07-03)
 Features:
-  - update builder constants location
-  - update dependencies versions
-  - change index.ejs template to index.html
-  - update template constants
-  - add variables.styl file, for holding stylus mixins and variables
-  - update instructions in readme ([daf2913](https://github.com/MLSDev/generator-waab/commit/daf2913944544664c76fbc8c3cb6c9ef1e3694a6))
+  - fix tests configuration 
+  - set ChromeHeadless as browser for running tests
+  - update dependencies
+  - add temporary fix for rx.js(v5.4.1) ([6fdd9b9](https://github.com/MLSDev/generator-waab/commit/6fdd9b96e6dc3c1f1dbea6cab588e3c11adbc308))
   
 ## 0.4.0 (2017-06-23)
 Features:
