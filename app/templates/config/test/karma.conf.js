@@ -53,22 +53,11 @@ module.exports = function (rootDir, config) {
     autoWatch: false,
 
     browsers: [
-      'Chrome'
+      'ChromeHeadless'
     ],
 
-    customLaunchers: {
-      ChromeTravisCi: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    }
+    concurrency: Infinity
   };
-
-  if (process.env.type) {
-    configuration.browsers = [
-      'ChromeTravisCi'
-    ];
-  }
 
   return configuration;
 };

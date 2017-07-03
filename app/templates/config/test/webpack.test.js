@@ -4,7 +4,7 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 module.exports = function (rootDir) {
-  const appConfigs = require('../app/local');
+  const appConfigs = require('../constants/local');
   const env = 'test';
 
   return {
@@ -38,7 +38,11 @@ module.exports = function (rootDir) {
                 inlineSourceMap: true,
                 compilerOptions: {
                   removeComments: true
-                }
+                },
+                // Temporary solution until new version of rx.js. Current version is 5.4.1
+                noStrictGenericChecks: false,
+                skipLibCheck: true
+                // End
               },
             },
             {
@@ -114,7 +118,7 @@ module.exports = function (rootDir) {
 
     plugins: [
       new DefinePlugin({
-        'APP_CONST': JSON.stringify(appConfigs.appConstants),
+        'APP_CONST': JSON.stringify(appConfigs.app),
         'ENV': JSON.stringify(env)
       }),
       new ContextReplacementPlugin(

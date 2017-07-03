@@ -36,7 +36,11 @@ module.exports = function (dirName, envConstants, env) {
             {
               loader: 'awesome-typescript-loader',
               options: {
-                configFileName: path.resolve(dirName, "tsconfig.webpack.json")
+                configFileName: path.resolve(dirName, "tsconfig.webpack.json"),
+                // Temporary solution until new version of rx.js. Current version is 5.4.1
+                noStrictGenericChecks: false,
+                skipLibCheck: true
+                // End
               }
             },
             {
