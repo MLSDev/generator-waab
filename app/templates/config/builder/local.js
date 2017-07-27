@@ -59,7 +59,7 @@ module.exports = function (dirName) {
     },
 
     devtool: "cheap-module-source-map",
-    
+
     plugins: [
       extractStyles,
       extractVendorStyles
@@ -67,9 +67,10 @@ module.exports = function (dirName) {
 
     devServer: {
       open: true,
-      historyApiFallback: true
+      historyApiFallback: true,
+      openPage: ''
     },
-    
+
     profile: true
   }
 }
