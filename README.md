@@ -35,11 +35,11 @@ yo waab
 Now the project is created. You can start developing
 
 ### Documentation
-* [How to update generator](./docs/how_to_update)
-* [Install options](./docs/installation_options)
-* [App structure](./docs/app_structure)
-* [App development details and features](./docs/development)
-* [Unit testing](./docs/testing)
+* [How to update generator](./docs/how_to_update.md)
+* [Install options](./docs/installation_options.md)
+* [App structure](./docs/app_structure.md)
+* [App development details and features](./docs/development.md)
+* [Unit testing](./docs/testing.md)
 
   
 ## [MIT License](./LICENSE)
